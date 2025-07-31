@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Shops</title>
+    <link rel="stylesheet" href="css/style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+</head>
+<body>
+     <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <div>
+                    <h1>Dashboard Analytics</h1>
+                    <p>Analyse des performances multi-shops</p>
+                </div>
+                <div class="controls">
+                    <select class="shop-selector" id="shopSelector">
+                        <option value="">Sélectionner un shop...</option>
+                    </select>
+                    <button class="export-btn" onclick="exportToPDF()">📄 Exporter PDF</button>
+                </div>
+            </div>
+        </header>
+
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Chargement des données...</p>
+        </div>
+
+        <div id="dashboard" style="display: none;">
+            <!-- KPIs Section -->
+            <div class="kpi-grid">
+
+                <div class="card kpi-card" id="kpi-conversion">
+                    <div class="kpi-label">Taux de Conversion</div>
+                    <div class="kpi-value" id="conversion-value">-</div>
+                    <div class="kpi-change" id="conversion-change">-</div>
+                </div>
+                <div class="card kpi-card" id="kpi-traffic">
+                    <div class="kpi-label">Trafic Mensuel</div>
+                    <div class="kpi-value" id="traffic-value">-</div>
+                    <div class="kpi-change" id="traffic-change">-</div>
+                </div>
+       
+            </div>
+
+            <!-- Charts Section -->
+            <div class="dashboard-grid">
+                <div class="card chart-card">
+                    <h3 class="card-title">Évolution du CA</h3>
+                    <div class="chart-container">
+                        <canvas id="revenueChart" height="450" width="600"></canvas>
+                    </div>
+                </div>
+                <div class="card chart-card">
+                    <h3 class="card-title">Trafic vs Conversions</h3>
+                    <div class="chart-container">
+                        <canvas id="trafficChart" height="450" width="600"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Insights Section -->
+            <div class="card insights-card">
+                <h3 class="card-title">Insights & Recommandations</h3>
+                <div class="insights-grid" id="insights-container">
+
+                </div>
+            </div>
+
+            <!-- Verbatims et Performances -->
+<div id="insights-container" class="dashboard-grid fade-in"></div>
+
+
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>
