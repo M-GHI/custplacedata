@@ -1,9 +1,6 @@
-  
-  
-const shopsData = {
+  const shopsData = {
     "brasserie-le-sud": {
         kpis: {
-
             tauxConversion: 2.3,
             trafic: 6300,
             panierMoyen: 34.5
@@ -87,9 +84,11 @@ function updateCharts(chartData) {
             labels: chartData.labels,
             datasets: chartData.datasets
         },
-        options: {
+        options: {                maintainAspectRatio: true
+            , aspectRatio: 4,
             responsive: true,
             plugins: {
+
                      legend: {
                     "display": true,
                     "position": "right",
@@ -100,25 +99,4 @@ function updateCharts(chartData) {
     });
 }
 
-const shop = shopsData['brasserie-le-sud'];
-const container = document.getElementById('insights-container');
 
-
-container.innerHTML = "";
-
-shop.insights.forEach(insight => {
-  const card = document.createElement('div');
-  card.className = 'card';
-
-  const title = document.createElement('div');
-  title.className = 'card-title';
-  title.innerHTML = `📝 ${insight.title} <span style="font-weight: normal;">: 21 au 27 juillet</span>`;
-
-  const desc = document.createElement('p');
-  desc.textContent = insight.description;
-
-  card.appendChild(title);
-  card.appendChild(desc);
-
-  container.appendChild(card);
-});
