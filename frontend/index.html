@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard Shops</title>
     <link rel="stylesheet" href="css/style.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
 </head>
+
 <body>
-     <div class="container">
+    <div class="container">
         <header class="header">
             <div class="header-content">
                 <div>
@@ -45,7 +47,7 @@
                     <div class="kpi-value" id="traffic-value">-</div>
                     <div class="kpi-change" id="traffic-change">-</div>
                 </div>
-       
+
             </div>
 
             <!-- Charts Section -->
@@ -57,25 +59,22 @@
                     </div>
                 </div>
                 <div class="card chart-card">
-                    
-                        <h3 class="card-title">Insights & Recommandations</h3>
-                <div class="insights-grid" id="insights-container">
-
-                </div>
+                    <h3 class="card-title">Insights & Recommandations</h3>
+                    <div class="insights-grid" id="insights-container"></div>
                 </div>
             </div>
 
             <!-- Insights Section -->
             <div class="card insights-card">
-           
+
             </div>
 
             <!-- Verbatims et Performances -->
-<div id="insights-container" class="dashboard-grid fade-in"></div>
-
+            <div id="insights-container" class="dashboard-grid fade-in"></div>
 
         </div>
     </div>
     <script src="js/main.js"></script>
 </body>
+
 </html>
